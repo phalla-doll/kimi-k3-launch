@@ -100,8 +100,8 @@ export default function App() {
     // SCENE 04: CAPABILITIES
     tl.fromTo(".scene-04", { opacity: 0 }, { opacity: 1, duration: 1 }, 23);
 
-    tl.fromTo(".s4-reason", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 2 }, 24);
-    tl.to(".s4-reason", { scaleX: 1.5, letterSpacing: "0.2em", duration: 2 }, 27);
+    tl.fromTo(".s4-reason", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 2 }, 24);
+    tl.to(".s4-reason", { scale: 1.05, duration: 2 }, 27);
     tl.to(".s4-reason", { opacity: 0, filter: "blur(20px)", duration: 2 }, 29);
 
     tl.fromTo(".s4-code", { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 2 }, 30);
@@ -189,15 +189,15 @@ export default function App() {
           <div className="absolute inset-0 flex items-center justify-center scene-04 opacity-0 z-40 pointer-events-none text-paper">
             <div className="absolute inset-0 flex flex-col items-center justify-center s4-reason">
               <div className="font-mono text-xs text-gray mb-8">01 / REASON</div>
-              <h2 className="font-display text-[8vw] uppercase leading-none text-center">FOLLOW THE PROBLEM<br/>BEYOND THE FIRST ANSWER.</h2>
+              <h2 className="font-display text-[6vw] md:text-[4vw] uppercase leading-none text-center">FOLLOW THE PROBLEM<br/>BEYOND THE FIRST ANSWER.</h2>
             </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center s4-code opacity-0">
               <div className="font-mono text-xs text-gray mb-8">02 / CODE</div>
-              <h2 className="font-display text-[8vw] uppercase leading-none text-center">MOVE FROM INTENT<br/>TO WORKING SYSTEMS.</h2>
+              <h2 className="font-display text-[6vw] md:text-[4vw] uppercase leading-none text-center">MOVE FROM INTENT<br/>TO WORKING SYSTEMS.</h2>
             </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center s4-build opacity-0">
               <div className="font-mono text-xs text-gray mb-8">03 / BUILD</div>
-              <h2 className="font-display text-[8vw] uppercase leading-none text-center">PLAN.<br/>EXECUTE.<br/>VERIFY.<br/>ITERATE.</h2>
+              <h2 className="font-display text-[6vw] md:text-[4vw] uppercase leading-none text-center">PLAN.<br/>EXECUTE.<br/>VERIFY.<br/>ITERATE.</h2>
             </div>
           </div>
 
