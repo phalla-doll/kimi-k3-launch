@@ -86,16 +86,18 @@ export default function App() {
     tl.to(".scene-02", { opacity: 0, duration: 1 }, 12);
     
     // SCENE 03: ONE MILLION CONTEXT
-    tl.to(".bg-paper-layer", { opacity: 1, duration: 2 }, 11);
+    tl.to(".master-bg", { backgroundColor: "#F1EFE8", color: "#090A0A", duration: 2 }, 11);
     tl.fromTo(".scene-03", { opacity: 0 }, { opacity: 1, duration: 2 }, 11);
 
     tl.to(".s3-numbers-container", { xPercent: -70, duration: 8, ease: "none" }, 13);
     
     tl.to(".s3-final-6", { scale: 150, xPercent: -300, transformOrigin: "center center", duration: 4, ease: "power3.inOut" }, 19);
+    
+    // Fade to dark before revealing capabilities to ensure contrast
+    tl.to(".master-bg", { backgroundColor: "#090A0A", color: "#F1EFE8", duration: 2 }, 21);
     tl.to(".scene-03", { opacity: 0, duration: 1 }, 23);
 
     // SCENE 04: CAPABILITIES
-    tl.to(".bg-paper-layer", { opacity: 0, duration: 2 }, 22);
     tl.fromTo(".scene-04", { opacity: 0 }, { opacity: 1, duration: 1 }, 23);
 
     tl.fromTo(".s4-reason", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 2 }, 24);
@@ -119,7 +121,7 @@ export default function App() {
     tl.to(".scene-05", { opacity: 0, duration: 2 }, 47);
 
     // SCENE 06: CLIMAX
-    tl.to(".bg-signal-layer", { opacity: 1, duration: 2 }, 47);
+    tl.to(".master-bg", { backgroundColor: "#D6FF3F", color: "#090A0A", duration: 2 }, 47);
     tl.fromTo(".scene-06", { opacity: 0 }, { opacity: 1, duration: 1 }, 48);
     
     tl.fromTo(".s6-statement", { scale: 15 }, { scale: 1, duration: 5, ease: "power3.out" }, 48);
@@ -128,7 +130,7 @@ export default function App() {
     tl.to(".scene-06", { opacity: 0, duration: 0.5 }, 59);
 
     // SCENE 07: FINAL CTA
-    tl.to(".bg-signal-layer", { opacity: 0, duration: 2 }, 58);
+    tl.to(".master-bg", { backgroundColor: "#090A0A", color: "#F1EFE8", duration: 2 }, 58);
     tl.fromTo(".scene-07", { opacity: 0 }, { opacity: 1, duration: 2 }, 59);
 
   }, { scope: containerRef, dependencies: [loaded] });
@@ -139,12 +141,8 @@ export default function App() {
       <Navigation activeScene={activeScene} />
 
       <div ref={containerRef} className="h-[2000vh] w-full relative" style={{ opacity: loaded ? 1 : 0 }}>
-        <div ref={stickyRef} className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center master-bg bg-ink text-paper">
+        <div ref={stickyRef} className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center master-bg text-paper bg-ink">
           
-          {/* BACKGROUND LAYERS */}
-          <div className="absolute inset-0 bg-paper opacity-0 bg-paper-layer z-0 pointer-events-none"></div>
-          <div className="absolute inset-0 bg-signal opacity-0 bg-signal-layer z-0 pointer-events-none"></div>
-
           {/* SCENE 07: FINAL CTA */}
           <div className="absolute inset-0 flex flex-col items-center justify-center scene-07 opacity-0 z-70 pointer-events-none text-paper">
             <div className="pointer-events-auto flex flex-col items-center text-center gap-12">
