@@ -1,0 +1,6 @@
+{
+  "name": "Kimi K3 Launch",
+  "description": "A continuous scroll-controlled typographic cinematic launch experience for Kimi K3.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
